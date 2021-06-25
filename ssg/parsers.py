@@ -13,12 +13,12 @@ class Parser:
         raise NotImplementedError
     
     def read(self, path: Path):
-        with open(path,mode='r') as file:
+        with open(path, "r") as file:
             return file.read()
 
-    def write(self, path: Path, dest: Path, content: Path, ext='.html'):
-        full_path = self.dest / path.with_suffix(ext).name
-        with open(full_path,'w') as file:
+    def write(self, path, dest, content, ext=".html"):
+        full_path = dest / path.with_suffix(ext).name
+        with open(full_path, "w") as file:
             file.write(content)
 
     def copy(self, path: Path, source: Path, dest: Path):
