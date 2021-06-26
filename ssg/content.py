@@ -29,8 +29,10 @@ class Content(Mapping):
     def type(self,type):
         type = self.data['type']
 
-    def __getitem__(self, k):
-        return self.data[k]
+    # def __getitem__(self, k):
+    #     return self.data[k]
+    def __getitem__(self, key):
+        return self.data[key]
 
     def __iter__(self):
         return self.data.__iter__()
@@ -42,7 +44,7 @@ class Content(Mapping):
         data  = {}
         for key, value in self.data.items():
             if key != 'content':
-                value = data[key]
+               data[key] = value
         return str(data)
 
 
